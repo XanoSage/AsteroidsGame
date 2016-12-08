@@ -51,10 +51,10 @@ public class JoystickHandler : MonoBehaviour, IObjectControlling, IPointerDownHa
 	private void CalculateObjectControllingData()
 	{
 		float force = (_startPosition - _handlerRectTransform.position).magnitude/_handlerRadius;
-		_force01.Set(force);
+		_force01.Set(force, true);
 		Vector3 direction = (_handlerRectTransform.position - _startPosition).normalized;
-		_direction.Set(direction);
-		Debug.LogFormat("[JoystickHandler] CalculateObjectControllingData - forc: {0}, direction: {1}", force, direction);
+		_direction.Set(direction, true);
+		//Debug.LogFormat("[JoystickHandler] CalculateObjectControllingData - forc: {0}, direction: {1}", force, direction);
 	}
 
 	void Start () 
@@ -65,8 +65,8 @@ public class JoystickHandler : MonoBehaviour, IObjectControlling, IPointerDownHa
 	
 	private void SetDefaultObjectControllingData()
 	{
-		_force01.Set(0);
-		_direction.Set(Vector3.zero);
+		_force01.Set(0f, true);
+		_direction.Set(Vector3.zero, true);
 	}
 
 	// Update is called once per frame
