@@ -22,6 +22,7 @@ public class GameController : MonoBehaviour
 		{
 			_spaceShipPresenter = go.GetComponent<SpaceShipPresenter>();
 			_spaceShipPresenter.Init(_joystickHandler);
+			go.transform.SetParent(_parentForObgects);
 		}
 	}
 	

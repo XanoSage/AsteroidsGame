@@ -66,7 +66,7 @@ public class JoystickHandler : MonoBehaviour, IObjectControlling, IPointerDownHa
 	private void SetDefaultObjectControllingData()
 	{
 		_force01.Set(0f, true);
-		_direction.Set(Vector3.zero, true);
+		_direction.Set(_direction.Value, true);
 	}
 
 	// Update is called once per frame
