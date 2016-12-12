@@ -26,6 +26,7 @@ public interface IController<TState, T1> : IDeInitializable, IStateOwner<TState>
 
 public interface IPausable
 {
+	IReadOnlyObservableValue<bool> IsPause { get; }
     void Pause();
     void Resume();
 }
